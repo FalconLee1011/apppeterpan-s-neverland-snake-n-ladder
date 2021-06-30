@@ -98,16 +98,16 @@ struct ContentView: View {
         .padding()
     }
     Text("Log: \(logStr)")
-    Button("ADD"){
-      let player = round % players
-      if(currentPosition[player] + 1 < 26){
-        dicePoint = 1
-      }
-      else{
-        currentPosition[player] = 0
-      }
-      move()
-    }
+//    Button("ADD"){
+//      let player = round % players
+//      if(currentPosition[player] + 1 < 26){
+//        dicePoint = 1
+//      }
+//      else{
+//        currentPosition[player] = 0
+//      }
+//      move()
+//    }
   }
   
   func initGame(){
@@ -144,7 +144,7 @@ struct ContentView: View {
       gridAttr[portal.0] = portal.1
     }
     
-    diceTimer = xTimer(time: 1, interval: 0.05, callback: self._dice, callbackOnTimerDone: self.move)
+    diceTimer = xTimer(time: 0.6, interval: 0.05, callback: self._dice, callbackOnTimerDone: self.move)
     playerX = [CGFloat](repeating: 0, count: players)
     actualPlayerX = [CGFloat](repeating: 0, count: players)
     playerY = [CGFloat](repeating: 0, count: players)
@@ -166,7 +166,7 @@ struct ContentView: View {
   }
   
   func move(){
-    dicePoint = 25
+//    dicePoint = 25
     let player = round % players
     if(targetPosition[player] + dicePoint < 26){
       targetPosition[player] += dicePoint
@@ -254,7 +254,7 @@ struct ContentView: View {
     targetPosition = [Int](repeating: 0, count: players)
     for player in 0..<players{
       currentPosition[player] = 0
-      playerX[player] = boardPosition[currentPosition[player]].0 // + CGFloat((10 * player))
+      playerX[player] = boardPosition[currentPosition[player]].0 + CGFloat((10 * player))
       playerY[player] = boardPosition[currentPosition[player]].1
     }
     round = 0

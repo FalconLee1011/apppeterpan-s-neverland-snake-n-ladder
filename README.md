@@ -1,4 +1,4 @@
-# snk'n lad
+# snk'n ladd
 
 <p align="center"><img height=175 src="docs/assets/appicon.jpg" /></p>
 

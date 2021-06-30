@@ -19,7 +19,7 @@ struct WinnerSheet: View {
   
   var body: some View {
     if(isWinnerDecided){
-      Text("Winner is Player\(player) !")
+      Text("Winner is Player\(player + 1) !")
       Image("player\(player + 1)")
         .resizable()
         .scaledToFit()
